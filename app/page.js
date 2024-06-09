@@ -237,6 +237,10 @@ export default function Home() {
 
       <div className="content">
 
+        <div className="head-info-player">
+            Cảm ơn Okami Fansub (photruyen.net) và một số nguồn khác đã dịch các video.
+        </div>
+
           <div className="wrap_player">
               
               <div className="player_content"  ref={firstChildRef}>
@@ -335,8 +339,8 @@ export default function Home() {
 
                       <div className={`contain_list_season_player_slide ${isVisible ? 'show' : 'hide'}`}>
                           <div className="list_season_player_slide">
-                            {seasons?.map((item) => (
-                                <div onClick={() => changeSeason(item.season)} id={item.season == curSeason.season ? "somua_choice" : ""} ><span>Season {item.season} - {item.title}</span><span>{item.start}-{item.end}</span></div>
+                            {seasons?.map((item, index) => (
+                                <div key={index} onClick={() => changeSeason(item.season)} id={item.season == curSeason.season ? "somua_choice" : ""} ><span>Season {item.season} - {item.title}</span><span>{item.start}-{item.end}</span></div>
                             ))}
                           </div>
                       </div>
