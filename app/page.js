@@ -238,7 +238,7 @@ export default function Home() {
       <div className="content">
 
         <div className="head-info-player">
-            Cảm ơn Okami Fansub (photruyen.net) và một số nguồn khác đã dịch các video.
+            Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.
         </div>
 
           <div className="wrap_player">
