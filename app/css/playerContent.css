@@ -1,0 +1,335 @@
+.content{
+    margin-top: 10px;
+}
+/*-----------------------------------------------*/
+.wrap_player{
+    position: relative;
+    overflow: none;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+.player_content{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: auto;
+    background-color: white;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+/*-----------------------------------------------*/
+.server_video{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+.server_video div{
+    float: left;
+    font-size: 14px;
+    background-color: cornflowerblue;
+    width: auto;
+    margin: 7px 0px 7px 7px;
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.server_video .chose_server{
+    background-color: coral;
+}
+
+.server_video .mv-right{
+    position: relative;
+    float: right;
+    margin: 7px 7px 7px 0px;
+}
+
+.contain_video {
+    position: relative;
+    float: left;
+    width: 100%;
+    /* Aspect ratio trick: 16:9 is commonly used */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+    height: 0; /* Sets height to zero to make padding-bottom work */
+    overflow: hidden;
+    background-color: black;
+}
+
+.contain_video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the video maintains its aspect ratio */
+}
+/*-----------------------------------------------*/
+.title_video{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: calc(100%);
+    height: auto;
+    color: black;
+}
+.title_video div:first-child{
+    margin: 10px 5px 10px 10px;
+    font-size: 1.2em;
+    width: auto;
+}
+.title_video div:last-child{
+    margin: 10px 5px 10px 10px;
+    font-size: 1em;
+    width: auto;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+/*-----------------------------------------------*/
+.player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    background-color: white;
+    color: black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+/*-----------------------------------------------*/
+.contain_title_player_slide{
+    position: relative;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+}
+.common-title-style {
+    position: relative;
+    height: auto;
+    font-size: 15px;
+    padding: 10px 0;
+    cursor: pointer;
+    float: left;
+    margin-right: 15px;
+}
+/*-----------------------------------------------*/
+.contain_tool_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin: 0px 10px 0px 10px;
+    width: calc(100% - 20px);
+    font-size: 14px;
+
+}
+.button_season_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 170px;
+    padding: 11px 0px 10px 0px;
+    cursor: pointer;
+}
+.button_season_player_slide span{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: auto;
+    padding: 2px 10px 2px 0px;
+
+}
+.button_season_player_slide div{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: auto;
+    background-color: rgba(88, 88, 88, 0.411);
+    padding: 2px 10px 2px 10px;
+    text-align: right;
+    border-radius: 4px;
+}
+.show_total_item{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 170px;
+    padding: 14px 0px 11px 0px;
+}
+/*-----------------------------------------------*/
+.contain_list_season_player_slide{
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    overflow: hidden;
+    float: left;
+    width: calc(100%);
+    height: auto;
+    background-color: rgb(76, 76, 76);
+    transition: max-height 0.2s ease-out;
+}
+.contain_list_season_player_slide.show {
+    max-height: 1000px; /* Arbitrary large value to ensure content is shown */
+
+}  
+.contain_list_season_player_slide.hide {
+    max-height: 0; /* Arbitrary large value to ensure content is shown */
+}
+.list_season_player_slide{
+    position: relative;
+    float: left;
+    width: calc(100%);
+    padding-right: 0px;
+    overflow: auto;
+    max-height: 250px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    font-weight: bold;
+}
+.list_season_player_slide div{
+    position: relative;
+    overflow: hidden;
+    width:calc(100% - 10px);
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.list_season_player_slide div:hover{
+    color: rgb(163, 195, 255);
+}
+.list_season_player_slide div:last-child{
+    border-bottom: none;
+}
+.list_season_player_slide div span:last-child{
+    margin: 10px 10px 10px 0px;
+}
+.list_season_player_slide div span:first-child{
+    margin: 10px 0px;
+    margin-right: auto;
+}
+.list_season_player_slide::-webkit-scrollbar {
+    width: 8px !important;
+}
+.list_season_player_slide::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border-radius: none;
+}
+.list_season_player_slide::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box; 
+}
+.list_season_player_slide::-webkit-scrollbar-thumb:hover{
+    border: 0px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box; 
+}
+.list_season_player_slide:hover::-webkit-scrollbar-thumb{
+    background-color: rgb(126, 126, 126);
+}
+#somua_choice{
+    color: coral;
+}
+/*-----------------------------------------------*/
+.contain_input_comment_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+#input_name[type=text]{
+    float: left;
+    width: calc(100% - 111px);
+    height: 25px;
+    margin: 5px 0px 5px 10px;
+    padding: 0px 7px 0px 7px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    background-color:rgb(209, 209, 209);
+}
+#input_comment[type=text]{
+    float: left;
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 5px 0px 0px 10px;
+    padding: 0px 7px 0px 7px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    background-color: rgb(209, 209, 209);
+}
+#send_comment_button{
+    float: right;
+    margin: 5px 10px 5px 0px;
+    padding: 4px 30px;
+    font-size: 13px;
+    border-radius: 3px;
+    background-color: rgb(0, 121, 70);
+    cursor: pointer;
+}
+
+.contain_all_list_player{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+
+.info_player{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    color: black;
+    margin-top: 5px;
+    height: auto;
+    background-color:white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.info_player div{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin: 10px 0px;
+    line-height: 21px;
+}
+.info_player div a{
+    color: tomato;
+    text-decoration: none;
+}
+
+
+
+
+.contain_middle_player_slide{
+    position: relative;
+    float: left;
+    height: auto;
+    width: 100%;
+    border-top: 1px solid rgba(158, 158, 158, 0.377);
+}

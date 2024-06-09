@@ -1,0 +1,111 @@
+/*-----------------------------------------------*/
+.contain_list_item_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgba(158, 158, 158, 0.377);
+}
+.list_item_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.item_player_slide{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 60px;
+    margin-top: 9px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.img_item_player_slide{
+    overflow: hidden;
+    float: left;
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+    margin: 0px 10px 0px 10px;
+}
+.img_item_player_slide img{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .2s ease;
+}
+.item_player_slide:hover  .img_item_player_slide img{
+    transform: scale(1.2); 
+    object-fit: cover;
+}
+.title_item_player_slide{
+    position: relative;
+    overflow: hidden;
+    color: black;
+    font-size: 14px;
+    max-height: 33px;
+    margin-right: 5px;
+    width: auto;
+
+    font-weight: bold;
+}
+.view_item_player_slide{
+    position: relative;
+    overflow: hidden;
+    color: black;
+    width: auto;
+    font-size: 15px;
+    margin-top: 5px;
+
+    line-height: 19px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.item_player_slide:hover  .view_item_player_slide{
+    color:cornflowerblue;
+}
+.item_player_slide:hover  .title_item_player_slide{
+    color:cornflowerblue;
+}
+#ep_choice div{
+    color: cornflowerblue;
+}
+#ep_choice div img{
+    border: 2px dashed cornflowerblue;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+}
+#ep_choice div{
+    background-color: transparent;
+}
+.contain_list_item_player_slide::-webkit-scrollbar {
+    width: 10px;
+}
+.contain_list_item_player_slide::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border-radius: none;
+}
+.contain_list_item_player_slide::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-clip: content-box; 
+}
+.contain_list_item_player_slide::-webkit-scrollbar-thumb:hover{
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-clip: content-box; 
+}
+.contain_list_item_player_slide:hover::-webkit-scrollbar-thumb{
+    background-color: rgb(126, 126, 126);
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "season": 1,
+    "title": "Biển Đông",
+    "start": 1,
+    "end": 61
+  },
+  {
+    "season": 2,
+    "title": "Tiến vào Đại Hải Trình",
+    "start": 62,
+    "end": 77
+  },
+  {
+    "season": 3,
+    "title": "Gặp Chopper tại Đảo Mùa Đông",
+    "start": 78,
+    "end": 91
+  },
+  {
+    "season": 4,
+    "title": "Vương quốc Alabasta",
+    "start": 92,
+    "end": 130
+  },
+  {
+    "season": 5,
+    "title": "Những giấc mơ! Cuộc xuất kích của Băng hải tặc Zenny! Huyền thoại về sương mù 7 màu",
+    "start": 131,
+    "end": 143
+  },
+  {
+    "season": 6,
+    "title": "Đảo Trên Trời Skypiea",
+    "start": 144,
+    "end": 195
+  },
+  {
+    "season": 7,
+    "title": "Tẩu thoát khỏi Pháo đài Hải Quân & đụng độ Băng hải tặc Foxy",
+    "start": 196,
+    "end": 228
+  },
+  {
+    "season": 8,
+    "title": "Đảo Water 7",
+    "start": 229,
+    "end": 263
+  },
+  {
+    "season": 9,
+    "title": "Đảo Tư Pháp Enies Lobby",
+    "start": 264,
+    "end": 336
+  },
+  {
+    "season": 10,
+    "title": "Thriller Bark",
+    "start": 337,
+    "end": 381
+  },
+  {
+    "season": 11,
+    "title": "Quần đảo Sabaody",
+    "start": 382,
+    "end": 407
+  },
+  {
+    "season": 12,
+    "title": "Đảo Nữ Nhi",
+    "start": 408,
+    "end": 421
+  },
+  {
+    "season": 13,
+    "title": "Nhà Ngục Dưới Đáy Biển Impel Down",
+    "start": 422,
+    "end": 456
+  },
+  {
+    "season": 14,
+    "title": "Tổng bộ Hải quân Marineford - Trận chiến Thượng Đỉnh - Ace người anh hùng không bao giờ chết",
+    "start": 457,
+    "end": 516
+  },
+  {
+    "season": 15,
+    "title": "Đảo Người Cá",
+    "start": 517,
+    "end": 578
+  },
+  {
+    "season": 16,
+    "title": "Đảo Punk Hazard",
+    "start": 579,
+    "end": 628
+  },
+  {
+    "season": 17,
+    "title": "Vương quốc Dressrosa",
+    "start": 629,
+    "end": 746
+  },
+  {
+    "season": 18,
+    "title": "Đảo Zou",
+    "start": 747,
+    "end": 782
+  },
+  {
+    "season": 19,
+    "title": "Whole Cake Island (Đảo Bánh Ngọt)",
+    "start": 783,
+    "end": 891
+  },
+  {
+    "season": 20,
+    "title": "Wano Quốc",
+    "start": 892,
+    "end": 1088
+  },
+  {
+    "season": 21,
+    "title": "Đảo Egghead",
+    "start": 1089,
+    "end": 9999
+  }
+]
