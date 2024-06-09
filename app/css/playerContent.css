@@ -228,7 +228,8 @@
     border-bottom: none;
 }
 .list_season_player_slide div span:last-child{
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 5px;
+    flex-shrink: 0; /* Prevents the element from shrinking */
 }
 .list_season_player_slide div span:first-child{
     margin: 10px 0px;
