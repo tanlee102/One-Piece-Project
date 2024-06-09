@@ -1,6 +1,7 @@
 import NextTopLoader from "nextjs-toploader";
 import MainProvider from "./Context/MainContext";
 import "./globals.css";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Xem Tua",
@@ -25,7 +26,9 @@ export default function RootLayout({ children }) {
           color="blue"
           speed={999}
         />
+        <Suspense>
         <main>{children}</main>
+        </Suspense>
       </body>
       </MainProvider>
     </html>
