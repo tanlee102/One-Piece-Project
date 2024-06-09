@@ -241,14 +241,14 @@ return (
 <div className="wrap-bar" dark-mode={darkMode ? "true" : "false"} onClick={(e) => {MenuClick(e);}}>
     <div className="nav-bar" dark-mode={darkMode ? "true" : "false"}>
 
-        <div class="fr-nav-bar">
+        <div className="fr-nav-bar">
 
             {/*LOGO*/}
             <Link href="/">
             <div className="wrap-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.48 160.05">
-                    <rect class="cls-1" x="76.24" y="-7.48" width="82.8" height="175.02" rx="41.4" transform="translate(-24.63 78.17) rotate(-33.48)"/>
-                    <rect class="cls-2" x="25.19" y="-7.48" width="82.8" height="175.02" rx="41.4" transform="matrix(0.84, 0.55, -0.55, 0.84, 54.53, -23.38)"/>
+                    <rect className="cls-1" x="76.24" y="-7.48" width="82.8" height="175.02" rx="41.4" transform="translate(-24.63 78.17) rotate(-33.48)"/>
+                    <rect className="cls-2" x="25.19" y="-7.48" width="82.8" height="175.02" rx="41.4" transform="matrix(0.84, 0.55, -0.55, 0.84, 54.53, -23.38)"/>
                 </svg>
             </div>
             </Link>

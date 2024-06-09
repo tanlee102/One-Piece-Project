@@ -261,7 +261,7 @@ export default function Home() {
                   <div className="contain_video">
                     {videoUrl === "" ?
                         <div className="contain-loader">
-                            <div class="loader"></div>
+                            <div className="loader"></div>
                         </div>
                     : (
                         videoUrl === "ERR" ?

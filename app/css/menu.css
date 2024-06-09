@@ -571,7 +571,7 @@ a{
     font-size: 1.3em;
 }
 
-/* HTML: <div class="loader"></div> */
+/* HTML: <div className="loader"></div> */
 .loader {
     width: 50px;
     aspect-ratio: 1;
