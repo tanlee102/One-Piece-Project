@@ -29,7 +29,9 @@ export default function Home() {
 
     const [videoUrl, setVideoUrl] = useState("")
     const [currentID, setCurrentID] = useState(null);
-    const [currentTypeLink, setCurrentTypeLink] = useState(false)
+    const [currentTypeLink, setCurrentTypeLink] = useState(false);
+
+    const [firstLoad, setFirstLoad] = useState(true)
 
     const getDataSeason = (seasonNumber) =>{
         for (const item of seasons) {
@@ -238,164 +240,164 @@ export default function Home() {
   return (
 
 
-      <div className="content">
+        <div className="content">
 
-        <div className="head-info-player">
-            Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.
-        </div>
+            <div className="head-info-player">
+                Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.
+            </div>
 
-          <div className="wrap_player">
-              
-              <div className="player_content"  ref={firstChildRef}>
+            <div className="wrap_player">
+                
+                <div className="player_content"  ref={firstChildRef}>
 
-                  <div className="server_video">
-                        <div className={!currentTypeLink ? "chose_server": "" } onClick={() => {settingLink(currentID)}}>AUTO</div>
-                        <div className={currentTypeLink ? "chose_server": "" } onClick={() => {settingLink(currentID, true)}}>HD</div>
+                        <div className="server_video">
+                            <div className={!currentTypeLink ? "chose_server": "" } onClick={() => {settingLink(currentID)}}>AUTO</div>
+                            <div className={currentTypeLink ? "chose_server": "" } onClick={() => {settingLink(currentID, true)}}>HD</div>
 
-                        {searchParams.get('episode')?
-                        <>
-                            <Link href={`/?episode=${episode.episode + 1}`}>
-                                <div className="mv-right">Tập tiếp theo</div>
-                            </Link>
-                            <Link href={`/?episode=${episode.episode - 1}`}>
-                                <div className="mv-right">Tập trước</div>
-                            </Link>
-                        </>
-                        : ""
-                        }
-                  </div>
+                            {searchParams.get('episode')?
+                            <>
+                                <Link href={`/?episode=${episode.episode + 1}`}>
+                                    <div className="mv-right">Tập tiếp theo</div>
+                                </Link>
+                                <Link href={`/?episode=${episode.episode - 1}`}>
+                                    <div className="mv-right">Tập trước</div>
+                                </Link>
+                            </>
+                            : ""
+                            }
+                        </div>
 
-                    
-                    <div className="contain_video">
-                        <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl}/>
-                    </div>
-         
-   
-
-                  <div className="title_video">
-                    {searchParams.get('episode') ?
-                        <>
-                            <div>Tập {episode?.episode}</div>
-                            <div>{episode?.title ? episode?.title : "__"}</div>
-                        </>
-                    : ""}
-
-                    {searchParams.get('movie') ?
-                        <>
-                            <div>Phim {movie?.index}</div>
-                            <div>{movie?.title ? movie?.title :"__"}</div>
-                        </>
-                    : ""}
-
-                    {searchParams.get('special') ?
-                        <>
-                            <div>Special {special?.index}</div>
-                            <div>{special?.title ? special?.title :"__"}</div>
-                        </>
-                    : ""}
-                  </div>
-                  
-              </div>
-
-              <div className="player_slide" style={{ height: height }} ref={secondChildRef}>
-
-                    <div className="contain_title_player_slide">
-                        {titles.map(title => (
-                            <TitleItem 
-                                key={title.id} 
-                                id={title.id} 
-                                label={title.label} 
-                                state={state} 
-                                setState={setState} 
-                            />
-                        ))}
-                    </div>
-
-  
-                  <div className="contain_middle_player_slide">
-
-                    <div className="contain_tool_player_slide">
-                        {titles[state-1]?.sea == true ?
-                            (
-                                <div className="button_season_player_slide" onClick={toggleVisibility}>
-                                    <span>Mùa {curSeason.season}</span>
-                                    <div>{curSeason.start} - {curSeason.end}</div> 
-                                </div>
-                            )
-                            :
-                            (
-                                <div className="show_total_item">Tổng số: {state == 2 ? movies.length : specials.length}</div>
-                            )
-
-                        }
+                        
+                        <div className="contain_video">
+                            <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl} firstLoad={firstLoad} setFirstLoad={setFirstLoad}/>
+                        </div>
             
-                      </div>
+    
 
-                      <div className={`contain_list_season_player_slide ${isVisible ? 'show' : 'hide'}`}>
-                          <div className="list_season_player_slide">
-                            {seasons?.map((item, index) => (
-                                <div key={index} onClick={() => changeSeason(item.season)} id={item.season == curSeason.season ? "somua_choice" : ""} ><span>Season {item.season} - {item.title}</span><span>{item.start}-{item.end}</span></div>
+                    <div className="title_video">
+                        {searchParams.get('episode') ?
+                            <>
+                                <div>Tập {episode?.episode}</div>
+                                <div>{episode?.title ? episode?.title : "__"}</div>
+                            </>
+                        : ""}
+
+                        {searchParams.get('movie') ?
+                            <>
+                                <div>Phim {movie?.index}</div>
+                                <div>{movie?.title ? movie?.title :"__"}</div>
+                            </>
+                        : ""}
+
+                        {searchParams.get('special') ?
+                            <>
+                                <div>Special {special?.index}</div>
+                                <div>{special?.title ? special?.title :"__"}</div>
+                            </>
+                        : ""}
+                    </div>
+                    
+                </div>
+
+                <div className="player_slide" style={{ height: height }} ref={secondChildRef}>
+
+                        <div className="contain_title_player_slide">
+                            {titles.map(title => (
+                                <TitleItem 
+                                    key={title.id} 
+                                    id={title.id} 
+                                    label={title.label} 
+                                    state={state} 
+                                    setState={setState} 
+                                />
                             ))}
-                          </div>
-                      </div>
+                        </div>
 
-                  </div>
+    
+                    <div className="contain_middle_player_slide">
 
-
-              
-                  <div className="contain_all_list_player">
-                  
-                      <div className="contain_list_item_player_slide">
-                          <div className="list_item_player_slide">
-                          
-                            {state == 1 && epSeason?.map((item) => (
-                                <Link key={item.episode} href={`/?episode=${item.episode}`} passHref id={item.episode == episode?.episode ? "ep_choice" : ""}>
-                          
-                                    <div className="item_player_slide">
-                                    <div className="img_item_player_slide">
-                                        <img src={item.imageUrl} alt={`Episode ${item.episode}`} />
+                        <div className="contain_tool_player_slide">
+                            {titles[state-1]?.sea == true ?
+                                (
+                                    <div className="button_season_player_slide" onClick={toggleVisibility}>
+                                        <span>Mùa {curSeason.season}</span>
+                                        <div>{curSeason.start} - {curSeason.end}</div> 
                                     </div>
-                                    <div className="title_item_player_slide">Tập {item.episode}</div>
-                                    <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
+                                )
+                                :
+                                (
+                                    <div className="show_total_item">Tổng số: {state == 2 ? movies.length : specials.length}</div>
+                                )
+
+                            }
                 
-                                </Link>
-                            ))}   
+                        </div>
 
-                            {state == 2 && movies?.map((item) => (
-                                <Link key={item.index} href={`/?movie=${item.index}`} passHref id={item.index == movie?.index ? "ep_choice" : ""}>
-                          
-                                    <div className="item_player_slide">
-                                    <div className="img_item_player_slide">
-                                        <img src={item.imageUrl} />
-                                    </div>
-                                    <div className="title_item_player_slide">Phim {item.index}</div>
-                                    <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
+                        <div className={`contain_list_season_player_slide ${isVisible ? 'show' : 'hide'}`}>
+                            <div className="list_season_player_slide">
+                                {seasons?.map((item, index) => (
+                                    <div key={index} onClick={() => changeSeason(item.season)} id={item.season == curSeason.season ? "somua_choice" : ""} ><span>Season {item.season} - {item.title}</span><span>{item.start}-{item.end}</span></div>
+                                ))}
+                            </div>
+                        </div>
+
+                    </div>
+
+
                 
-                                </Link>
-                            ))}   
+                    <div className="contain_all_list_player">
+                    
+                        <div className="contain_list_item_player_slide">
+                            <div className="list_item_player_slide">
+                            
+                                {state == 1 && epSeason?.map((item) => (
+                                    <Link key={item.episode} href={`/?episode=${item.episode}`} passHref id={item.episode == episode?.episode ? "ep_choice" : ""}>
+                            
+                                        <div className="item_player_slide">
+                                        <div className="img_item_player_slide">
+                                            <img src={item.imageUrl} alt={`Episode ${item.episode}`} />
+                                        </div>
+                                        <div className="title_item_player_slide">Tập {item.episode}</div>
+                                        <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
+                    
+                                    </Link>
+                                ))}   
 
-                            {state == 3 && specials?.map((item) => (
-                                <Link key={item.index} href={`/?special=${item.index}`} passHref id={item.index == special?.index ? "ep_choice" : ""}>
-                          
-                                    <div className="item_player_slide">
-                                    <div className="img_item_player_slide">
-                                        <img src={item.imageUrl} />
-                                    </div>
-                                    <div className="title_item_player_slide">Special {item.index}</div>
-                                    <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
-                
-                                </Link>
-                            ))}   
-                          </div>
+                                {state == 2 && movies?.map((item) => (
+                                    <Link key={item.index} href={`/?movie=${item.index}`} passHref id={item.index == movie?.index ? "ep_choice" : ""}>
+                            
+                                        <div className="item_player_slide">
+                                        <div className="img_item_player_slide">
+                                            <img src={item.imageUrl} />
+                                        </div>
+                                        <div className="title_item_player_slide">Phim {item.index}</div>
+                                        <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
+                    
+                                    </Link>
+                                ))}   
+
+                                {state == 3 && specials?.map((item) => (
+                                    <Link key={item.index} href={`/?special=${item.index}`} passHref id={item.index == special?.index ? "ep_choice" : ""}>
+                            
+                                        <div className="item_player_slide">
+                                        <div className="img_item_player_slide">
+                                            <img src={item.imageUrl} />
+                                        </div>
+                                        <div className="title_item_player_slide">Special {item.index}</div>
+                                        <div className="view_item_player_slide">{String(item.title).replace(/^"|"$/g, '')}</div></div>
+                    
+                                    </Link>
+                                ))}   
+                            </div>
 
 
-                      </div>
-        
-                  </div>
-              </div>
-          </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
 
-      </div>
+        </div>
 
   );
 }
