@@ -1,21 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import Plyr from 'plyr';
-import 'plyr/dist/plyr.css';;
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import 'plyr/dist/plyr.css';
 
 const VideoComponent = ({ videoUrl,  posterUrl }) => {
   const videoRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (videoRef.current) {
-      const player = new Plyr(videoRef.current, {
-        // Add any Plyr configuration options here
-      });
-
+      const Plyr = require('plyr');
+      const player = new Plyr(videoRef.current, {});
       player.poster = posterUrl;
 
-      // Clean up the Plyr instance on component unmount
       return () => {
-        player.destroy();
+        if (player) {
+          console.log(videoUrl)
+          player.destroy();
+          videoRef.current = null;
+        }
       };
     }
   }, [videoUrl]);
