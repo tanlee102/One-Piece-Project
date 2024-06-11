@@ -266,8 +266,9 @@ export default function Home() {
                   </div>
 
                     
-                    
-                    <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl}/>
+                    <div className="contain_video">
+                        <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl}/>
+                    </div>
          
    
 

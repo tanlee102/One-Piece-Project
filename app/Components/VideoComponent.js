@@ -22,7 +22,7 @@ const VideoComponent = ({ videoUrl,  posterUrl }) => {
 
   return (
 
-    <div className="contain_video">
+    <div>
       {videoUrl === "" ? (
         <div className="contain-loader">
           <div className="loader"></div>
