@@ -269,7 +269,7 @@ export default function Home() {
 
                         
                         <div className="contain_video">
-                            <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl} firstLoad={firstLoad} setFirstLoad={setFirstLoad}/>
+                            <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl}/>
                         </div>
             
     

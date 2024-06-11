@@ -12,7 +12,6 @@ const VideoComponent = ({ videoUrl,  posterUrl }) => {
 
       return () => {
         if (player) {
-          console.log(videoUrl)
           player.destroy();
           videoRef.current = null;
         }
