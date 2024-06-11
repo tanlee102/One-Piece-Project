@@ -11,6 +11,10 @@ import movies from './data/movies.json'
 import specials from './data/specials.json'
 import epIds from './data/episodeIds.json'
 import axios from "axios";
+import dynamic from "next/dynamic";
+
+const VideoComponent = dynamic(() => import('./Components/VideoComponent'))
+
 
 export default function Home() {
 
@@ -24,7 +28,6 @@ export default function Home() {
     const [special, setSpecial] = useState({});
 
     const [videoUrl, setVideoUrl] = useState("")
-    const videoRef = useRef(null);
     const [currentID, setCurrentID] = useState(null);
     const [currentTypeLink, setCurrentTypeLink] = useState(false)
 
@@ -177,10 +180,10 @@ export default function Home() {
     }, [state])
 
     useEffect(() => {
-        const epChoiceElement = document.getElementById('ep_choice');
+        const epChoiceElement = document?.getElementById('ep_choice');
         if (window.innerWidth > 1049 && epChoiceElement) {
-          epChoiceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+            epChoiceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }   
     }, [epSeason, movie, special]);
 
 
@@ -262,21 +265,11 @@ export default function Home() {
                         }
                   </div>
 
-                  <div className="contain_video">
-                    {videoUrl === "" ?
-                        <div className="contain-loader">
-                            <div className="loader"></div>
-                        </div>
-                    : (
-                        videoUrl === "ERR" ?
-                        <div className="contain-loader">
-                            <p>Video không tồn tại hoặc bị lỗi!</p>
-                        </div>
-                        :
-                        <video src={videoUrl}  ref={videoRef}  controls></video>
-                    )
-                    }
-                  </div>
+                    
+                    
+                    <VideoComponent videoUrl={videoUrl} posterUrl={episode.imageUrl}/>
+         
+   
 
                   <div className="title_video">
                     {searchParams.get('episode') ?
