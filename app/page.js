@@ -244,7 +244,7 @@ export default function Home() {
 
             <div className="head-info-player">
                 <p>Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.</p>
-                <p>Chọn HD nếu video bị mờ hoặc lỗi.</p>
+                <p>Chọn HD nếu video bị mờ, bị lỗi hoặc tải chậm.</p>
             </div>
 
             <div className="wrap_player">
