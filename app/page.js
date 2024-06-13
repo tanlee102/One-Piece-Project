@@ -174,6 +174,7 @@ export default function Home() {
     }, []);
 
 
+
     useEffect(() => {
         setIsVisible(false);
         if(state == 1) loadEpisode()
@@ -181,13 +182,31 @@ export default function Home() {
         if(state == 3) loadSpecial()
     }, [state])
 
-    useEffect(() => {
-        const epChoiceElement = document?.getElementById('ep_choice');
-        if (window.innerWidth > 1049 && epChoiceElement) {
-            epChoiceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }   
-    }, [epSeason, movie, special]);
 
+
+    const hasScrolled = useRef(false);
+    useEffect(() => {
+        if (hasScrolled.current) return;
+        const element = document.getElementById('ep_choice');
+        const parent = document.querySelector('.contain_list_item_player_slide');
+
+        if (element && parent) {
+            const elementRect = element.getBoundingClientRect();
+            const parentRect = parent.getBoundingClientRect();
+
+            const elementOffset = elementRect.top - parentRect.top;
+            const elementCenterOffset = elementOffset - (parent.clientHeight / 2) + (element.clientHeight / 2);
+
+            parent.scrollTo({
+                top: elementCenterOffset,
+                behavior: 'smooth'
+            });
+            hasScrolled.current = true;
+        }
+    }, [episode, movie, special]);
+
+
+    
 
     const loading = useRef(false);
 
