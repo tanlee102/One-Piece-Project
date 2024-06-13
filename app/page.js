@@ -243,7 +243,8 @@ export default function Home() {
         <div className="content">
 
             <div className="head-info-player">
-                Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.
+                <p>Cảm ơn Okami Fansub và một số nguồn khác đã dịch các video.</p>
+                <p>Chọn HD nếu video bị mờ hoặc lỗi.</p>
             </div>
 
             <div className="wrap_player">
@@ -395,6 +396,11 @@ export default function Home() {
             
                     </div>
                 </div>
+            </div>
+
+
+            <div className="bottom-player">
+            Câu chuyện kể về Monkey D. Luffy, một chàng trai trẻ tuổi, được thần tượng thời thơ ấu của mình là Shanks "Tóc Đỏ" truyền cảm hứng trở thành một hải tặc, bắt đầu cuộc hành trình tại East Blue tìm kiếm kho báu danh giá và trở thành Vua Hải Tặc. Trong quá trình thành lập băng hải tặc Mũ Rơm, Luffy đã giải cứu và kết bạn với một kiếm sĩ tên là Roronoa Zoro(ロのノア ゾロ), và họ bắt đầu tìm kiếm One Piece. Họ tham gia vào cuộc hành trình cùng Nami(ナミ), một hoa tiêu; Usopp(ウソプ), một tay thiện xạ; Vinsmoke Sanji(ヴィンスモク サンジ), một đầu bếp. Họ có được một con tàu tên là Going Merry(ゴイング メリー) và đối đầu với những băng hải tặc khét tiếng của East Blue. Khi Luffy và đồng đội của cậu bắt đầu cuộc phiêu lưu của, những người khác tham gia vào băng sau đó trong bộ truyện, bao gồm Tony Tony Chopper(トニー チョパー), một bác sĩ và là một con tuần lộc biết nói; Nico Robin(ニコ ロビン), một nhà khảo cổ học; Franky(フランキー), một thợ đóng tàu cyborg; Brook(ブルーク), một nhạc công và Jinbei(ジンベイ), một người cá và là cựu thành viên của Thất vũ hải(七武海). Khi Going Merry bị hư hỏng không thể sửa chữa được, băng hải tặc Mũ Rơm đã sử dụng một con tàu mới tên là Thousand Sunny(サウサンド サーニー). Cùng nhau, họ chạm trán với những tên hải tặc, thợ săn tiền thưởng, tổ chức tội phạm, quân cách mạng, đặc vụ và Chính phủ thế giới, cùng nhiều bạn bè và kẻ thù khác.
             </div>
 
         </div>
