@@ -212,7 +212,9 @@ export default function Home() {
             const response = await axios.get(`https://video.miwabox.live/api/${bc == true ? 'linkB' : 'link'}?id=${encodeURIComponent(id)}`);
             return response.data;
         } catch (error) {
-            return "ERR";
+            if(bc == false){
+                return fetchLinkAsync(id, true);
+            }else return "ERR";
         }
     }
     const getLink = async (linkId, bc = false) => {
