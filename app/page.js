@@ -213,6 +213,7 @@ export default function Home() {
             return response.data;
         } catch (error) {
             if(bc == false){
+                setCurrentTypeLink(true);
                 return fetchLinkAsync(id, true);
             }else return "ERR";
         }
